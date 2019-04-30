@@ -1,7 +1,7 @@
 import numpy as np
 
 def exchange_row(arr, x, y):
-    """exchange tow rows of np.array"""
+    """exchange rows x, y of np.array"""
     arr[x], arr[y] = arr[y], np.array(arr[x], copy=True)
 
 def matrix_find(matrix, start_row, comp):
@@ -17,8 +17,11 @@ def matrix_find(matrix, start_row, comp):
             return row
 
 def rref(m, shape):
-    """calculates the row reduced echolen form,
-    shape should be attained using np.shape"""
+    """Try to calculates the row reduced echolen form, this function does not
+    check whether the result is a row reduced echolon form.
+    After the call, the result will be stored in m.
+    @ shape should be attained using np.shape.
+    """
     row, column = shape
     rows_to_be_reduced = min(row, column - 1)
 
