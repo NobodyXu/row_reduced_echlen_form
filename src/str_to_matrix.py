@@ -1,3 +1,4 @@
 import numpy as np
 
-str_to__matrix = lambda s: np.array(np.mat(s), dtype = float, order = "C")
+def str_to__matrix(s):
+    return np.array(np.mat(s), dtype = float, order = "C")
