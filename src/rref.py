@@ -27,8 +27,12 @@ def rref(m, shape):
 
     # Reduce variable in each row to 1 if possible
     for i in range(rows_to_be_reduced):
+        def comp(the_row, col=i):
+            return the_row[col] != 0
+
         ## Make the i-th element of the i-th row != 0 by searching from row i to the end
-        row_to_exchange = matrix_find(m, i, lambda row, col=i: row[col] != 0)
+        #row_to_exchange = matrix_find(m, i, lambda row, col=i: row[col] != 0)
+        row_to_exchange = matrix_find(m, i, comp)
         if row_to_exchange is None:# A row satisfies that condition cannot be found
             continue
         exchange_row(m, i, row_to_exchange)
