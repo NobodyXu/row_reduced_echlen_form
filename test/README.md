@@ -15,7 +15,7 @@ def test(m):
     pass
 ```
 
-where `m` can be considered to be introduced by `import filename as m`.
+where `m` can be used to access the file.
 
 To access a function `f` inside that file, just type:
 
